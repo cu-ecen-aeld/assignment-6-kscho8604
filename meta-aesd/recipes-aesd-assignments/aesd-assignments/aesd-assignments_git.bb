@@ -21,7 +21,8 @@ S = "${WORKDIR}/git/server"
 FILES:${PN} += "${bindir}/aesdsocket"
 # TODO: customize these as necessary for any libraries you need for your application
 # (and remove comment)
-TARGET_LDFLAGS += "-pthread -lrt"
+#TARGET_LDFLAGS += "-pthread -lrt"
+RDEPENDS:${PN} += "libgcc"
 
 inherit update-rc.d
 INITSCRIPT_PACKAGES = "${PN}"
